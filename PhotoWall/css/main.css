@@ -1,0 +1,54 @@
+@charset "utf-8";
+/**{
+	margin: 0;
+	padding: 0;
+}*/
+body{
+	background: gainsboro;
+	
+}
+.div_pic{
+	width: 990px;
+	height: 450px;
+	margin: 60px auto;
+}
+.p{
+	padding: 10px 10px 10px ;
+	background: #FFFFFF;
+	box-shadow: 5px 5px 4px rgba(50,50,50,0.5);
+	width: 150px;
+	position: relative;
+}
+.p1{
+	transform: rotate(-5deg);
+}
+.p2{
+	transform: rotate(5deg);
+}
+.p3{
+	transform: rotate(-9deg);
+}
+.p4{
+	transform: rotate(9deg);
+}
+
+.p5{
+	transform: rotate(-9deg);
+}
+
+.p6{
+	transform: rotate(-4deg);
+}
+.p7{
+	transform: rotate(-9deg);
+}
+.p8{
+	transform: rotate(-5deg);
+}
+.p9{
+	transform: rotate(9deg);
+}
+.div_pic img:hover{
+	transform: rotate(0deg) scale(1.5);
+	z-index: 9;
+}
