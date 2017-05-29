@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>离子瀑布</title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+//			创建画布
+			var canvas = document.createElement("canvas");
+//			将画布插入body中
+			document.body.appendChild(canvas);
+			canvas.style.backgroundColor="black";
+			
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			
+			var context = canvas.getContext("2d");
+			var arcS=[];
+			loop();
+			function loop(){
+				setInterval(function(){
+					context.clearRect(0,0,canvas.width,canvas.height);
+					var arc=new drawArc(canvas.width*0.5,canvas.height*0.5);
+					arcS.push(arc);
+					for (i=0;i<arcS.length;i++) {
+						arcS[i].upDate();
+					}
+				},30);
+			}
+			
+			function drawArc(x,y){
+//				圆心坐标
+				this.x=x;
+				this.y=y;
+//				y方向的变化
+				this.y_c=-5;
+				this.x_c=Math.random()*4-2;
+				this.gravity=0.1;
+//				画圆
+				this.draw=function(){
+					context.beginPath();
+					context.arc(this.x,this.y,5,0,Math.PI*2,false);
+					var c1 = Math.floor(Math.random()*255);
+					var c2 = Math.floor(Math.random()*255);
+					var c3= Math.floor(Math.random()*255);
+					context.fillStyle="rgb("+ c1 +"," + c2 +"," + c3 +")";
+					context.fill();
+					context.closePath();
+				};
+//				不断更新圆心坐标
+				this.upDate=function(){
+					this.x=this.x+this.x_c;
+					this.y=this.y+this.y_c;
+					this.y_c=this.gravity+this.y_c;
+					this.draw();
+				};
+			}
+		</script>
+	</body>
+</html>
