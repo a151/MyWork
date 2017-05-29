@@ -1,0 +1,37 @@
+#jisaunqi{
+	width: 240px;
+	height: 400px;
+	background-color: gray;
+	position: absolute;
+	margin:auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+#out{
+width: 240px;
+height: 90px;
+color: white;
+text-align: right;
+font-size: 20px;
+line-height: 100px;	
+}
+#jisaunqi a{
+	padding-top: 5px;
+	float: left;
+	width: 60px;
+	height: 60px;
+	background: papayawhip;
+	color: black;
+	font-size: 30px;
+	text-align: center;
+	
+	
+}
+#jisaunqi a:nth-child(2){
+	width: 180px;
+}
+#jisaunqi a:nth-child(16){
+	width: 120px;
+}
